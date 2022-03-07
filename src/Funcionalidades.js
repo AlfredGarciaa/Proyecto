@@ -8,6 +8,7 @@ form.addEventListener("submit", (event) =>
 {
   event.preventDefault();
 
+  let res= precioTotal(cantidad.value,precio.value);
   let valorimpuesto = ImpFORstate(estado.value);
   const cantidadMostrar = Number.parseInt(cantidad.value);
   const precioMostrar = Number.parseInt(precio.value);
@@ -15,6 +16,7 @@ form.addEventListener("submit", (event) =>
 
   div.innerHTML = "<p>" + cantidadMostrar + "<p>" + "<p>" + precioMostrar + "<p>"
   document.getElementById('impuesto').innerHTML = valorimpuesto;
+  document.getElementById('precio').innerHTML=res
 }); 
 
 function ImpFORstate(valueState) 
@@ -42,4 +44,10 @@ function ImpFORstate(valueState)
           alert("No existe");
   }
   return valorImpuestos;
+}
+
+function precioTotal(cantidad,precio)
+{
+    let res=cantidad*precio;
+    return res;
 }
