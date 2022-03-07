@@ -32,6 +32,9 @@ function ImpFORstate(valueState)
     case 'TX':
         valorImpuestos = 0.0625;
         break;
+    case 'AL':
+        valorImpuestos = 0.04;
+        break;
     default:
         alert("No existe");
   }
