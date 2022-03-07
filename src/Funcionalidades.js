@@ -59,14 +59,20 @@ function Descuento(valorcompra)
 {
     let valorDescuento=0;
     let res;
-    if(valorcompra>3000)
+    if(valorcompra>7000)
     {
-        valorDescuento=0.05;
+        valorDescuento=0.07;
     }else
     {
-        if(valorcompra>1000)
+        if(valorcompra>3000)
         {
-            valorDescuento=0.03
+            valorDescuento=0.05;
+        }else
+        {
+            if(valorcompra>1000)
+            {
+                valorDescuento=0.03
+            }
         }
     }
     return valorDescuento;
