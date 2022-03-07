@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 </head>
-  <body>
-    <h1>T O T A L I Z A D O R</h1>
+<body>
+    <h1>Totalizador</h1>
     <form id="totalizador-form">
-      <label for="cantidad-input">Cantidad de item:</label>
-      <input type="number" id="cantidad-input" />
-      <label for="precio-input">Precio por item:</label>
-      <input type="number" id="precio-input" />
-      <label>Codigo de estado:</label>
+        <label for="cantidad-input">Cantidad de item:</label>
+        <input type="number" id="cantidad-input" />
+        <label for="precio-input">Precio por item:</label>
+        <input type="number" id="precio-input" />
+        <label>Codigo de estado:</label>
         <select id="estado-input">
             <option value="UT">UT</option>
             <option value="NV">NV</option>
@@ -17,16 +17,15 @@
             <option value="AL">AL</option>
             <option value="CA">CA</option>
         </select>
-
-      <br><input type="submit" value="mostrar" />
+        
+        <br><input type="submit" value="Totalizar" /> 
     </form>
 
-    <div id="resultado-div"></div>
     <br><label><strong>Precio neto: </strong><label id="precio"></label></label>
-    <br><label><strong>Descuento: % </strong><label id="descuento"></label></label>
-    <br><label><strong>Impuesto del estado: % </strong><label id="impuesto"></label></label>
+    <br><label><strong>Descuento: </strong><label id="descuento"></label></label>
+    <br><label><strong>Impuesto: </strong><label id="impuesto"></label></label>
     <br><label><strong>Precio total (descuento e impuesto): </strong><label id="total"></label></label>
 
-    <script type="module" src="./src/Funcionalidades.js"></script>
-  </body>
+    <script src="./src/Funcionalidades.js"></script>
+</body>
 </html>
