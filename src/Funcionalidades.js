@@ -10,11 +10,13 @@ form.addEventListener("submit", (event) =>
 
   let res= precioTotal(cantidad.value,precio.value);
   let valorimpuesto = ImpFORstate(estado.value);
+  let valordescuento=Descuento(res+valorimpuesto);
   const cantidadMostrar = Number.parseInt(cantidad.value);
   const precioMostrar = Number.parseInt(precio.value);
 
 
   div.innerHTML = "<p>" + cantidadMostrar + "<p>" + "<p>" + precioMostrar + "<p>"
+  document.getElementById('descuento').innerHTML=valordescuento
   document.getElementById('impuesto').innerHTML = valorimpuesto;
   document.getElementById('precio').innerHTML=res;
   document.getElementById('total').innerHTML = res+valorimpuesto;
@@ -51,4 +53,15 @@ function precioTotal(cantidad,precio)
 {
     let res=cantidad*precio;
     return res;
+}
+
+function Descuento(valorcompra)
+{
+    let valorDescuento=0;
+    let res;
+    if(valorcompra>1000)
+    {
+        valorDescuento=0.03
+    }
+    return valorDescuento;
 }
