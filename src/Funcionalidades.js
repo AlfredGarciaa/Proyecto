@@ -10,13 +10,15 @@ form.addEventListener("submit", (event) =>
 
   let res= precioTotal(cantidad.value,precio.value);
   let valorimpuesto = ImpFORstate(estado.value);
+  let valordescuento=Descuento(res+valorimpuesto);
   const cantidadMostrar = Number.parseInt(cantidad.value);
   const precioMostrar = Number.parseInt(precio.value);
 
 
   div.innerHTML = "<p>" + cantidadMostrar + "<p>" + "<p>" + precioMostrar + "<p>"
   document.getElementById('impuesto').innerHTML = valorimpuesto;
-  document.getElementById('precio').innerHTML=res
+  document.getElementById('precio').innerHTML=res;
+  document.getElementById('total').innerHTML = res+valorimpuesto-valordescuento;
 }); 
 
 function ImpFORstate(valueState) 
@@ -25,23 +27,11 @@ function ImpFORstate(valueState)
   //let res = precioTotal(cantidad.value, precio.value);
   switch (valueState) 
   {
-      case 'UT':
-          valorImpuestos = 6.65;
-          break;
-      case 'NV':
-          valorImpuestos = 8.00;
-          break;
-      case 'TX':
-          valorImpuestos = 6.25;
-          break;
-      case 'AL':
-          valorImpuestos = 4.00;
-          break;
-      case 'CA':
-          valorImpuestos = 8.25;
-          break;
-      default:
-          alert("No existe");
+    case 'CA':
+        valorImpuestos = 4.00;
+        break;
+    default:
+        alert("No existe");
   }
   return valorImpuestos;
 }
@@ -50,4 +40,39 @@ function precioTotal(cantidad,precio)
 {
     let res=cantidad*precio;
     return res;
+}
+
+function Descuento(valorcompra)
+{
+    let valorDescuento=0;
+    let res;
+    if(valorcompra>30000)
+    {
+        valorDescuento=0.15;
+    }else
+    {
+        if(valorcompra>10000)
+        {
+            valorDescuento=0.1;
+        }else
+        {
+            if(valorcompra>7000)
+            {
+                valorDescuento=0.07;
+            }else
+            {
+                if(valorcompra>3000)
+                {
+                    valorDescuento=0.05;
+                }else
+                {
+                    if(valorcompra>1000)
+                    {
+                        valorDescuento=0.03
+                    }
+                }
+            }
+        }
+    }
+    return res = valorcompra*valorDescuento;
 }
