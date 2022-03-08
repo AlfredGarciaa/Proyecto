@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-</head>
-<body>
-    <h1>Totalizador</h1>
+    <h1 style="text-align: center;">
+        <strong><mark>F E R R E T E R I A  "L O S  A N D E S"</mark></strong>
+    </h1>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+<body> 
+    <b>
+    <h1 style="color: red;">
+        Totalizador
+    </h1>
     <form id="totalizador-form">
         <label for="cantidad-input">Cantidad de item:</label>
         <input type="number" id="cantidad-input" />
@@ -18,13 +23,98 @@
             <option value="CA">CA</option>
         </select>
         
-        <br><input type="submit" value="Totalizar" /> 
+        <br><b>
+        <input type="submit" value="Totalizar" /> 
+        </br></b>
     </form>
 
-    <br><label><strong>Precio neto: </strong><label id="precio"></label></label>
-    <br><label><strong>Descuento: </strong><label id="descuento"></label></label>
-    <br><label><strong>Impuesto: </strong><label id="impuesto"></label></label>
-    <br><label><strong>Precio total (descuento e impuesto): </strong><label id="total"></label></label>
+    <br><label><strong>Precio neto: $</strong><label id="precio"></label></label>
+    <br>
+    <label style="background-color: cadetblue;">
+        <strong>Descuento: %</strong><label id="descuento"></label>
+    </label>
+    <br><label><strong>Impuesto: $</strong><label id="impuesto"></label></label>
+    <br>
+    <label style="background-color: greenyellow;">
+        <strong>Precio total (descuento e impuesto): $</strong><label id="total"></label>
+    </label>
+    
+    <br><br>
+    <style type="text/css">
+        table, th, td 
+        {
+            border: 1px solid black;
+        }
+        th, td 
+        {
+            padding: 5px;
+        }
+        table
+        {
+            text-align: center;
+            background-color: gainsboro;
+        }
+    </style>
+    <label style="color: blue;">
+        <strong>Impuestos por Estado </strong>
+    </label>
+    <br>
+    <table> 
+        <tr>
+            <th>Estado</th>
+            <th>Tasa de Impuesto</th>
+        </tr>
+        <tr>
+            <td>UT</td>
+            <td>6.65%</td>
+        </tr>
+        <tr>
+            <td>NV</td>
+            <td>8.00%</td>
+        </tr>
+        <tr>
+            <td>TX</td>
+            <td>6.25%</td>
+        </tr>
+        <tr>
+            <td>AL</td>
+            <td>4.00%</td>
+        </tr>
+        <tr>
+            <td>CA</td>
+            <td>8.25%</td>
+        </tr>
+    </table>
+    <label style="color: blue;">
+        <strong>Descuentos </strong>
+    </label>
+    <br>
+    <table>
+        <tr>
+            <th>Total de la Orden</th>
+            <th>Tasa de descuento</th>
+        </tr>
+        <tr>
+            <td>1000</td>
+            <td>3%</td>
+        </tr>
+        <tr>
+            <td>3000</td>
+            <td>5%</td>
+        </tr>
+        <tr>
+            <td>7000</td>
+            <td>7%</td>
+        </tr>
+        <tr>
+            <td>10000</td>
+            <td>10%</td>
+        </tr>
+        <tr>
+            <td>30000</td>
+            <td>15%</td>
+        </tr>
+    </table>
 
     <script src="./src/Funcionalidades.js"></script>
 </body>
